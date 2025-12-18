@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLW Call Ringer - VDO.Ninja Demo</title>
+    <link rel="stylesheet" href="call-ringer-vdo.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FLW Call Ringer - VDO.Ninja Demo</h1>
+        </header>
+
+        <!-- Login Panel -->
+        <section id="login-section" class="login-section">
+            <h2>Login</h2>
+            <div class="login-form">
+                <input type="text" id="username-input" placeholder="Enter your username" maxlength="50">
+                <button id="go-online-btn" class="btn btn-primary">Go Online</button>
+            </div>
+        </section>
+
+        <!-- Main App (hidden until logged in) -->
+        <div id="app-section" style="display: none;">
+            <!-- Status Bar -->
+            <section class="status-section">
+                <div class="status-bar">
+                    <div class="user-info">
+                        <span>You are: <strong id="current-username"></strong></span>
+                    </div>
+                    <div class="status-indicator">
+                        <span class="status-dot" id="status-dot"></span>
+                        <span id="status-text">Offline</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Presence List -->
+            <section class="presence-section">
+                <h2>Online Users</h2>
+                <ul id="presence-list" class="presence-list">
+                    <li class="empty-state">No other users online</li>
+                </ul>
+            </section>
+
+            <!-- Call Status -->
+            <section class="call-status-section">
+                <div id="call-status" class="call-status idle">
+                    <span id="call-status-text">Ready</span>
+                    <button id="cancel-call-btn" class="btn btn-cancel" style="display: none;">Cancel Call</button>
+                    <button id="end-call-btn" class="btn btn-end" style="display: none;">End Call</button>
+                    <button id="mute-mic-btn" class="btn btn-mute" style="display: none;">Mute Mic</button>
+                </div>
+            </section>
+
+            <!-- Incoming Call Modal -->
+            <section class="incoming-call-section" id="incoming-call-section" style="display: none;">
+                <div class="incoming-call-modal">
+                    <h3>Incoming Call</h3>
+                    <p class="caller-name" id="caller-name-display"></p>
+                    <div class="call-actions">
+                        <button id="accept-btn" class="btn btn-accept">Accept</button>
+                        <button id="decline-btn" class="btn btn-decline">Decline</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Busy/Queue Notification -->
+            <section class="queue-section" id="queue-section" style="display: none;">
+                <div class="queue-badge">
+                    <span>📞 Queued call waiting</span>
+                </div>
+            </section>
+
+            <!-- Event Log -->
+            <section class="event-log-section">
+                <h2>Event Log</h2>
+                <div id="event-log" class="event-log">
+                    <!-- Events will be appended here -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Audio element for remote audio playback -->
+    <audio id="remote-audio" autoplay></audio>
+
+    <!-- Load VDO.Ninja SDK -->
+    <script src="https://vdo.ninja/vdoninja-sdk.js"></script>
+    <script src="call-ringer-vdo.js"></script>
+</body>
+</html>

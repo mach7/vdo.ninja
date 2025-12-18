@@ -1,0 +1,278 @@
+/* FLW Call Ringer Prototype - Minimal Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.identity {
+    font-size: 14px;
+    color: #666;
+}
+
+.identity strong {
+    color: #333;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* User List */
+.user-list {
+    list-style: none;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.user-item:last-child {
+    border-bottom: none;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-name {
+    font-weight: 500;
+}
+
+.user-badge {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.user-badge.self {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.phone-btn {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+}
+
+.phone-btn:hover:not(:disabled) {
+    background: #45a049;
+}
+
+.phone-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Call Status */
+.call-status {
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.call-status.idle {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.call-status.calling {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.call-status.incoming {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.call-status.in-call {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+/* Incoming Call Modal */
+.incoming-call-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.incoming-call-modal {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    min-width: 300px;
+}
+
+.incoming-call-modal h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.caller-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1976d2;
+    margin-bottom: 30px;
+}
+
+.call-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-accept {
+    background: #4caf50;
+    color: white;
+}
+
+.btn-accept:hover {
+    background: #45a049;
+}
+
+.btn-decline {
+    background: #f44336;
+    color: white;
+}
+
+.btn-decline:hover {
+    background: #da190b;
+}
+
+/* Event Log */
+.event-log {
+    max-height: 300px;
+    overflow-y: auto;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+.event-log-entry {
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+    color: #666;
+}
+
+.event-log-entry:last-child {
+    border-bottom: none;
+}
+
+.event-log-entry .timestamp {
+    color: #999;
+    margin-right: 10px;
+}
+
+.event-log-entry .event-type {
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.event-log-entry.call-request {
+    color: #f57c00;
+}
+
+.event-log-entry.call-accepted {
+    color: #4caf50;
+}
+
+.event-log-entry.call-declined {
+    color: #f44336;
+}
+
+.event-log-entry.user-online {
+    color: #1976d2;
+}

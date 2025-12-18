@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLW Video Playground</title>
+  <link rel="stylesheet" href="prototype-shell.css" />
+</head>
+
+<body>
+  <div class="app-shell">
+    <header>
+      <h1>FLW Video Playground</h1>
+      <p>Simple FLW-first UI shell for validating experiences without touching VDO Ninja UI.</p>
+    </header>
+
+    <main>
+      <section class="panel preview">
+        <h2>Local Preview</h2>
+        <div class="preview-placeholder">
+          <span>Camera + mic feed placeholder</span>
+        </div>
+        <div class="preview-status" id="preview-status">Preview status: idle</div>
+      </section>
+
+      <section class="panel participants">
+        <h2>Participants</h2>
+        <ul class="participants-list">
+          <li>Host · ME</li>
+          <li>Guest 1 · audio muted</li>
+          <li>Guest 2 · video only</li>
+        </ul>
+      </section>
+
+      <section class="panel controls">
+        <h2>Controls</h2>
+        <div class="button-row">
+          <button type="button" data-action="start-preview">Start Local Preview</button>
+          <button type="button" data-action="join-session">Join Session</button>
+          <button type="button" data-action="publish-camera">Publish Camera</button>
+          <button type="button" data-action="publish-mic">Publish Mic</button>
+          <button type="button" data-action="request-screen">Request Screen Share</button>
+          <button type="button" data-action="end-call">End Call</button>
+          <button type="button" data-action="load-runtime">Load VDO Runtime</button>
+        </div>
+      </section>
+
+      <section class="panel host-controls">
+        <h2>Host Controls</h2>
+        <div class="button-row">
+          <button type="button" data-control="mute">Mute Participant</button>
+          <button type="button" data-control="kick">Kick Participant</button>
+          <button type="button" data-control="lock">Lock Room</button>
+          <button type="button" data-control="allow-screen">Allow Screen Share</button>
+        </div>
+      </section>
+
+      <section class="panel debug-panel">
+        <h2>Event Log</h2>
+        <ul id="event-log"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="prototype-shell.js"></script>
+</body>
+
+</html>

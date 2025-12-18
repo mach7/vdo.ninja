@@ -1,0 +1,142 @@
+:root {
+  color: #f1f3f5;
+  background-color: #0e1b2a;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #0e1b2a, #12263f 60%, #1b2c44);
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+header {
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 0.25rem 0 0;
+  opacity: 0.75;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.panel {
+  background: rgba(17, 30, 48, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+.preview-placeholder {
+  height: 180px;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+}
+
+.preview-status {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.participants-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.95rem;
+  background: #1e87ff;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(30, 135, 255, 0.35);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button[data-control] {
+  background: #3ad29f;
+}
+
+.debug-panel {
+  grid-column: 1 / -1;
+}
+
+#event-log {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+#event-log li {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .app-shell {
+    padding: 1rem;
+  }
+
+  button {
+    flex: 1 1 calc(50% - 0.5rem);
+  }
+}
