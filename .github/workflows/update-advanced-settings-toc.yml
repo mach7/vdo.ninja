@@ -4,7 +4,7 @@ on:
   
 jobs:
   update-toc:
-    if: github.actor == 'mach7'
+    if: github.actor == 'mach7' && github.triggering_actor == 'mach7'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
