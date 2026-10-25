@@ -1,11 +1,10 @@
 name: Update Advanced Settings Markdown TOC
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 29 2 1'
   
 jobs:
   update-toc:
+    if: github.actor == 'mach7'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
